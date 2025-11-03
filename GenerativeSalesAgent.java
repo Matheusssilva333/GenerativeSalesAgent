@@ -1,3 +1,5 @@
+package com.mycompany.GenerativeSalesAgent;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -24,14 +26,12 @@ public class GenerativeSalesAgent {
                 break;
             }
 
-            // Verifica se o usuário quer avaliar uma rede social
             if (entrada.toLowerCase().startsWith("avaliar ")) {
                 String link = entrada.substring(8).trim();
                 avaliarRedeSocial(link);
                 continue;
             }
 
-            // Gera resposta da IA
             String resposta = gerarResposta(entrada);
             System.out.println("IA: " + resposta);
         }
@@ -69,19 +69,24 @@ public class GenerativeSalesAgent {
                 }
 
                 int responseCode = con.getResponseCode();
+
+                InputStream is = (responseCode == 200) ? con.getInputStream() : con.getErrorStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is, "utf-8"));
+                StringBuilder response = new StringBuilder();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    response.append(line.trim());
+                }
+
                 if (responseCode == 429) {
                     System.out.println("Limite de requisições atingido. Aguardando " + espera + "ms...");
                     Thread.sleep(espera);
                     espera *= 2;
                     tentativas++;
                     continue;
-                }
-
-                BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"));
-                StringBuilder response = new StringBuilder();
-                String line;
-                while ((line = br.readLine()) != null) {
-                    response.append(line.trim());
+                } else if (responseCode != 200) {
+                    System.out.println("Erro da API (" + responseCode + "): " + response.toString());
+                    return "Não foi possível obter resposta da API.";
                 }
 
                 JSONObject jsonResponse = new JSONObject(response.toString());
@@ -109,7 +114,6 @@ public class GenerativeSalesAgent {
         return "Não foi possível obter resposta da API após várias tentativas.";
     }
 
-    // Método de avaliação automática de redes sociais
     public static void avaliarRedeSocial(String link) throws InterruptedException {
         String prompt = "Você é um consultor digital especialista em marketing de redes sociais. "
                 + "Analise o perfil ou link fornecido e forneça: "
@@ -119,5 +123,4 @@ public class GenerativeSalesAgent {
         System.out.println("IA (avaliando rede social): " + gerarResposta(prompt));
     }
 }
-
  
