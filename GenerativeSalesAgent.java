@@ -9,8 +9,7 @@ import org.json.JSONObject;
 
 public class GenerativeSalesAgent {
 
-    private static final String OPENAI_API_KEY = "-SUA_API_KEY_AQUI";
-    private static final String OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
+    private static final String Gemini_API_KEY = "-SUA_API_KEY_AQUI";
     private static final List<JSONObject> historicoMensagens = new ArrayList<>();
     private static final Scanner scanner = new Scanner(System.in);
 
