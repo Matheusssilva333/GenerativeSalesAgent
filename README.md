@@ -1,7 +1,7 @@
 # GenerativeSalesAgent
 
 Um agente de vendas e marketing digital com IA generativa, desenvolvido em Java.  
-Este projeto tem como objetivo integrar a API do Gemini (Gemini) a uma aplicação Java para criar um chatbot inteligente capaz de responder dúvidas, sugerir serviços, qualificar leads e auxiliar nas estratégias de vendas digitais.
+Este projeto tem como objetivo integrar a API do Gemini a uma aplicação Java para criar um chatbot inteligente capaz de responder dúvidas, sugerir serviços, qualificar leads e auxiliar nas estratégias de vendas digitais.
 
 ## Funcionalidades
 
@@ -60,4 +60,5 @@ Abra uma issue ou envie um pull request.
 
 - [OpenAI API Docs](https://platform.openai.com/docs/)
 - [Java Official Documentation](https://docs.oracle.com/en/java/)
+
 
