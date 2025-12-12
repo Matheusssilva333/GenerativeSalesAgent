@@ -17,7 +17,7 @@ Este projeto tem como objetivo integrar a API do Gemini a uma aplicação Java p
 1. **Pré-requisitos**
    - Java 8 ou superior instalado
    - Conexão à internet
-   - Chave de API do OpenAI (obtenha em https://platform.openai.com)
+   - Chave de API do Gemini
 
 2. **Clone o repositório**
    ```sh
