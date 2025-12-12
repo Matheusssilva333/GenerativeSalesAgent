@@ -8,7 +8,7 @@ Este projeto tem como objetivo integrar a API do Gemini a uma aplicação Java p
 - **Chatbot inteligente**: Conversa natural e personalizada com clientes.
 - **Sugestão de serviços/produtos**: Responde perguntas e recomenda soluções.
 - **Qualificação de leads**: Capta informações relevantes para vendas.
-- **Integração com OpenAI GPT**: Respostas geradas por IA generativa.
+- **Integração com Gemini**: Respostas geradas por IA generativa.
 - **Fácil customização**: Adapte os prompts e fluxos conforme sua empresa.
 - **Exemplo de uso via terminal**: Simples de executar e testar.
 
@@ -58,7 +58,6 @@ Abra uma issue ou envie um pull request.
 
 ## Referências
 
-- [OpenAI API Docs](https://platform.openai.com/docs/)
-- [Java Official Documentation](https://docs.oracle.com/en/java/)
+- Documentation](https://docs.oracle.com/en/java/)
 
 
